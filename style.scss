@@ -1,0 +1,115 @@
+$content-bg: #b1b1f3;
+$content-color:#000;
+$cp-img-url:"cp.png";
+$msg-question-text-color:#000;
+$msg-answer-text-color:#fff;
+$msg-question-bg-color: #c4b3b3;
+$msg-answer-bg-color:blue;
+$font-family:"Roboto";
+
+
+
+#container {
+  font-family: $font-family;
+  font-size:13pt;
+  width: 35%;
+  /*margin:0 auto;*/
+  border-radius: 10px 9px 0px 0px;
+  -webkit-border-radius: 10px 9px 0px 0px;
+  -moz-border-radius: 10px 9px 0px 0px;
+
+  .activate {
+    display: block !important;
+  }
+
+  .js-stage {
+    margin-top: 18px;
+    width: 100%;
+    height: 567px;
+    opacity: 0.7;
+    border-radius: 25px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .message {
+    display: none;
+    max-width: 280px;
+    width: 80%;
+  }
+
+  .message .content{
+    display:none;
+  }
+
+  .message-container {
+    display: inline-block;
+    position: absolute;
+    bottom: 60px;
+    height: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 515px;
+    width: 100%;
+    margin-left: -5% !important;
+  }
+
+  .message-input{
+    width:90%;
+    border:none !important;
+  }
+  .send-container {
+    position: absolute;
+    bottom: 10px;
+    width: 95%;
+    margin-left: -2% !important;
+  }
+}
+
+.typing-indicator {
+  /*margin: 20px;*/
+  display: none;
+  float:left;
+
+}
+.typing-indicator .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #D3D3D3FF;
+  animation: wave 1s linear infinite;
+  animation-delay: -0.9s;
+}
+.typing-indicator .dot.two {
+  animation-delay: -0.7s;
+}
+.typing-indicator .dot:nth-child(3) {
+  animation-delay: -0.6s;
+}
+
+@keyframes wave {
+  0%,
+  60%,
+  100% {
+    transform: initial;
+  }
+  30% {
+    transform: translateY(-15px);
+  }
+}
+
+input[type=text],input[type=text]:focus {
+  border: 3px solid white !important;
+  outline:none;
+}
+
+.w3-leftbar {
+  border-left: 15px solid #ccc!important;
+}
+
+.w3-rightbar {
+  border-right: 15px solid #ccc!important
+}
