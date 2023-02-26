@@ -5,18 +5,35 @@ $msg-question-text-color:#000;
 $msg-answer-text-color:#fff;
 $msg-question-bg-color: #c4b3b3;
 $msg-answer-bg-color:blue;
-$font-family:"Roboto";
+$font-family:"arial";
 
+html {
+  scroll-behavior: smooth;
+}
 
 
 #container {
   font-family: $font-family;
-  font-size:13pt;
+  font-size:15px;
   width: 35%;
   /*margin:0 auto;*/
   border-radius: 10px 9px 0px 0px;
   -webkit-border-radius: 10px 9px 0px 0px;
   -moz-border-radius: 10px 9px 0px 0px;
+
+  &::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: orange;        /* color of the tracking area */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: blue;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid orange;  /* creates padding around scroll thumb */
+  }
 
   .activate {
     display: block !important;
@@ -36,13 +53,22 @@ $font-family:"Roboto";
 
   .message {
     display: none;
-    max-width: 280px;
-    width: 80%;
+    /*width: 60%;*/
+  }
+  .message.question {
+    margin-right:50%;
+    background-color: #E4E6EB !important;
+  }
+  .message.answer {
+    margin-left:50%;
+    background-color: #1877F2!important;
   }
 
   .message .content{
     display:none;
   }
+
+
 
   .message-container {
     display: inline-block;
@@ -53,7 +79,9 @@ $font-family:"Roboto";
     overflow-x: hidden;
     max-height: 515px;
     width: 100%;
-    margin-left: -5% !important;
+    margin-left: -3.5% !important;
+    padding-top: 415px;
+
   }
 
   .message-input{
@@ -64,10 +92,16 @@ $font-family:"Roboto";
     position: absolute;
     bottom: 10px;
     width: 95%;
-    margin-left: -2% !important;
+    margin-left: -1.5% !important;
+    display:flex;
+    padding-right: 0px;
   }
 }
 
+
+.message-send {
+  color: indigo;
+}
 .typing-indicator {
   /*margin: 20px;*/
   display: none;
