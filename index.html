@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Chatbox Mockup</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="rnd-js-chatbot.js"></script>
     <link rel="stylesheet" href="style.css"  />
@@ -13,19 +13,21 @@
 </head>
 <body>
 
+    <div id="container" class="w3-card-4 w3-mobile w3-display-bottommiddle w3-round-xlarge">
+        <div class="w3-container w3-animate-bottom js-stage">
+            <div class="w3-container message-container">
 
-
-<div id="container" class=" w3-card-4  w3-display-middle w3-round-xlarge">
-    <div class="w3-container w3-animate-bottom js-stage">
-        <div class="w3-container message-container">
-
+            </div>
+            <div class="w3-container w3-border w3-round-xlarge send-container">
+                <input type="text" class="w3-input no-outline message-input" placeholder="Aa">
+                <button class="w3-button fa fa-paper-plane w3-ripple w3-hover-indigo w3-right-align w3-round-xlarge w3-margin-left w3-xlarge message-send"></button>
+            </div>
         </div>
-        <div class="w3-container w3-border w3-round-xlarge send-container">
-            <input type="text" class="w3-input no-outline message-input" placeholder="Message">
-            <button class="w3-button fa fa-paper-plane w3-ripple w3-hover-indigo w3-right-align w3-round-xlarge w3-margin-left w3-xlarge message-send"></button>
+        <div class="w3-container next_button w3-padding-16 w3-margin-bottom w3-hide">
+            <button class="w3-button w3-display-bottommiddle w3-margin-bottom w3-indigo w3-round-xlarge next_button">Continue</button>
         </div>
     </div>
-</div>
+
 
 <div class="fieldset"  style="display:none;" data-varset="qchat">
 

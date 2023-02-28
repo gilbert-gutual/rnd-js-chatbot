@@ -2,7 +2,7 @@ jQuery.js_botchat = function( settings ) {
     settings = jQuery.extend(true, {
         debug:true,
         INT_INPUT_LENGTH:0,
-        DONE_TEXT:"Please now scroll down and click the ‘Next’ arrow",
+        DONE_TEXT:"Please scroll down and click the ‘Continue’ arrow",
     }, settings || {});
 
     let $ = jQuery;
@@ -10,8 +10,9 @@ jQuery.js_botchat = function( settings ) {
     onLoad();
     function onLoad() {
         generateChatDom();
-        jQuery(".message-input").on('keyup', function (e) { if (e.key === 'Enter' || e.keyCode === 13) { sendMessage(); } });
+        jQuery(".message-input").on('keyup', function (e) { if (e.key === 'Enter' || e.keyCode === 13) { sendMessage(e); } });
         jQuery(".message-send").on('click', function (e) { sendMessage(); });
+        jQuery(".w3-button.next_button").on('click', function (e) {  jQuery("#cm-NextButton").click();  });
     };
     function generateChatDom(){
         jQuery(".cm-response-container").each( function(i){
@@ -31,7 +32,7 @@ jQuery.js_botchat = function( settings ) {
                         <div class='typing-indicator' data-msgindx='${(jQuery(".cm-response-container").length)}'><span class='dot one'></span><span class='dot two'></span><span class='dot three'></span></div></div>`;
         jQuery(".message-container").append(jQuery(thisquestion));
     }
-    function sendMessage(){
+    function sendMessage(e){
         // Do something
         let inputBox = jQuery(".message-input");
         let sendButton = jQuery(".message-send");
@@ -43,6 +44,7 @@ jQuery.js_botchat = function( settings ) {
              if  (thismessage.trim().length==0){ return; }
          }
         jQuery(`.message.answer[data-msgindx='${thiscode}']`).text(thismessage);
+        jQuery(`.cm-response-container [type='text'][data-msgindx='${thiscode}']`).val(thismessage);
         jQuery(`.message.answer[data-msgindx='${thiscode}']`).addClass("activate");
         thiscode++;
         jQuery(`.typing-indicator[data-msgindx='${thiscode}']`).addClass("activate");
@@ -50,7 +52,7 @@ jQuery.js_botchat = function( settings ) {
         inputBox.attr("disabled","")
         sendButton.attr("disabled","")
         inputBox.val('');
-        if (jQuery('.message-container').scrollHeight > 500) { jQuery('.message-container').addClass("reached")}
+        if ((jQuery('.message-container').prop("scrollHeight")-500) > 500) { jQuery('.message-container').addClass("reached")}
         //scroll to bottom
         jQuery('.message-container').animate({
             scrollTop: 99999
@@ -65,7 +67,7 @@ jQuery.js_botchat = function( settings ) {
                 sendButton.removeAttr("disabled")
                 inputBox.focus()
             } else {
-                console.log("show the next button")
+                jQuery(".w3-container.next_button").addClass("w3-show")
             }
         }, 1500);
     }

@@ -15,7 +15,7 @@ html {
 #container {
   font-family: $font-family;
   font-size:15px;
-  width: 35%;
+  width: 350px;
   /*margin:0 auto;*/
   border-radius: 10px 9px 0px 0px;
   -webkit-border-radius: 10px 9px 0px 0px;
@@ -99,7 +99,9 @@ html {
     padding-right: 0px;
   }
 }
-
+.next_button{
+  margin-bottom:10px;
+}
 
 .message-send {
   color: indigo;
@@ -148,4 +150,18 @@ input[type=text],input[type=text]:focus {
 
 .w3-rightbar {
   border-right: 15px solid #ccc!important
+}
+
+@media screen and (max-width: 480px) {
+
+  #container {
+   /* position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(-0%,-250px);*/
+
+  }
+  .w3-card-4{
+    box-shadow: none !important;
+  }
 }
