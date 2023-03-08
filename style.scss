@@ -59,6 +59,7 @@ html {
   .message.question {
     margin-right:50%;
     background-color: #E4E6EB !important;
+    color: #000000 !important;
   }
   .message.answer {
     margin-left:50%;
@@ -68,8 +69,6 @@ html {
   .message .content{
     display:none;
   }
-
-
 
   .message-container {
     display: inline-block;
@@ -90,6 +89,7 @@ html {
   .message-input{
     width:90%;
     border:none !important;
+    color: #222222;
   }
   .send-container {
     position: absolute;
